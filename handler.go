@@ -28,7 +28,6 @@ type Credentials struct {
 type Claims struct {
 	Username string `json:"username"`
 	jwt.StandardClaims
-	Test string `json:"test"`
 }
 
 // Create the Login handler
@@ -64,7 +63,6 @@ func Login(w http.ResponseWriter, r *http.Request) {
 			// In JWT, the expiry time is expressed as unix milliseconds
 			ExpiresAt: expirationTime.Unix(),
 		},
-		Test: "EEEEEKKKK",
 	}
 
 	// Declare the token with the algorithm used for signing, and the claims
